@@ -62,12 +62,25 @@ public class WaveFormDraw : MonoBehaviour {
 		
 	}
 
+	//Call when user changes Values to recalculate!
+	void ReDraw(){
+		int j, k;
+		for (j = 0; j<buffsize; j++){
+			for (k = 0; k < numWaves; k++) {
+				userBuffer [j] += useramps[k] * Mathf.Sin (((float)j/(float)buffsize)*(2.0f * PI * userfreqs [k]));
+			}
+			linedraw2.SetPosition (j, new Vector3 (0.0f, userBuffer [j], (float)j / 8.0f));
+		}
+	}
+
 	void FixedUpdate(){
 		light1pos.transform.position = Vector3.Lerp(light1pos.transform.position, new Vector3 (0.0f, (float)waveBuffer [pos1], (float)pos1/8.0f), 0.50f);
 		light2pos.transform.position = Vector3.Lerp(light2pos.transform.position, new Vector3 (0.0f, (float)userBuffer [pos2] - 10.0f, (float)pos2/8.0f), 0.50f);
 
 			pos1 = (pos1 + 1) % buffsize;
 			pos2 = (pos2 + 1) % buffsize;
+
+
 	}
 		
 	void MoveObject(Transform thistrans, Vector3 startpos, Vector3 endpos, float time){
