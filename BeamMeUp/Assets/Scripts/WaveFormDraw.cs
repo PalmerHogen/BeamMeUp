@@ -13,6 +13,8 @@ public class WaveFormDraw : MonoBehaviour {
 	public int numWaves = 10;
 	public int buffsize = 512;
 
+	public int freqRange = 10;
+
 	float[] waveBuffer;
 	float[] userBuffer;
 	int[] userfreqs;
@@ -37,9 +39,9 @@ public class WaveFormDraw : MonoBehaviour {
 		int i, j, k;
 
 		for (i = 0; i < numWaves; i++) {
-			freqs [i] = Random.Range (0, 10);
+			freqs [i] = Random.Range (0, freqRange);
 			amps[i] = Random.Range(0.0f, 1.0f);
-			userfreqs [i] = Random.Range (0, 10);
+			userfreqs [i] = Random.Range (0, freqRange);
 			useramps[i] = Random.Range(0.0f, 1.0f);
 		}
 
@@ -74,25 +76,12 @@ public class WaveFormDraw : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		light1pos.transform.position = Vector3.Lerp(light1pos.transform.position, new Vector3 (0.0f, (float)waveBuffer [pos1], (float)pos1/8.0f), 0.50f);
-		light2pos.transform.position = Vector3.Lerp(light2pos.transform.position, new Vector3 (0.0f, (float)userBuffer [pos2] - 10.0f, (float)pos2/8.0f), 0.50f);
+		light1pos.transform.position = new Vector3 (0.0f, (float)waveBuffer [pos1], (float)pos1 / 8.0f);
+		light2pos.transform.position = new Vector3 (0.0f, (float)userBuffer [pos2] - 10.0f, (float)pos2/8.0f);
 
-			pos1 = (pos1 + 1) % buffsize;
-			pos2 = (pos2 + 1) % buffsize;
+		pos1 = (pos1 + 1) % buffsize;
+		pos2 = (pos2 + 1) % buffsize;
 
 
-	}
-		
-	void MoveObject(Transform thistrans, Vector3 startpos, Vector3 endpos, float time){
-		float i = 0.0f;
-
-		float rate = 1.0f / time;
-
-		while (i < 1.0f) {
-			i += Time.deltaTime * rate;
-			thistrans.position = Vector3.Lerp (startpos, endpos, i);
-
-		}
-		return;
 	}
 }

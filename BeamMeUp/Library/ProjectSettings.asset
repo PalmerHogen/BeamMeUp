@@ -3,7 +3,11 @@
 --- !u!129 &1
 PlayerSettings:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
   serializedVersion: 14
+=======
+  serializedVersion: 13
+>>>>>>> a80e97679bd5f080b8d16c826ddeaada4cd5b96e
   productGUID: 3355557de5a687e44a6eface0a816616
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
@@ -61,7 +65,10 @@ PlayerSettings:
   allowedAutorotateToLandscapeLeft: 1
   useOSAutorotation: 1
   use32BitDisplayBuffer: 1
+<<<<<<< HEAD
   preserveFramebufferAlpha: 0
+=======
+>>>>>>> a80e97679bd5f080b8d16c826ddeaada4cd5b96e
   disableDepthAndStencilBuffers: 0
   androidBlitType: 0
   defaultIsFullScreen: 0
@@ -92,6 +99,10 @@ PlayerSettings:
   allowFullscreenSwitch: 1
   graphicsJobMode: 0
   macFullscreenMode: 2
+<<<<<<< HEAD
+=======
+  d3d9FullscreenMode: 1
+>>>>>>> a80e97679bd5f080b8d16c826ddeaada4cd5b96e
   d3d11FullscreenMode: 1
   xboxSpeechDB: 0
   xboxEnableHeadOrientation: 0
@@ -101,7 +112,14 @@ PlayerSettings:
   n3dsDisableStereoscopicView: 0
   n3dsEnableSharedListOpt: 1
   n3dsEnableVSync: 0
+<<<<<<< HEAD
   xboxOneResolution: 0
+=======
+  ignoreAlphaClear: 0
+  xboxOneResolution: 0
+  xboxOneSResolution: 0
+  xboxOneXResolution: 3
+>>>>>>> a80e97679bd5f080b8d16c826ddeaada4cd5b96e
   xboxOneMonoLoggingLevel: 0
   xboxOneLoggingLevel: 1
   xboxOneDisableEsram: 0
@@ -127,7 +145,10 @@ PlayerSettings:
   bundleVersion: 1.0
   preloadedAssets: []
   metroInputSource: 0
+<<<<<<< HEAD
   wsaTransparentSwapchain: 0
+=======
+>>>>>>> a80e97679bd5f080b8d16c826ddeaada4cd5b96e
   m_HolographicPauseOnTrackingLoss: 1
   xboxOneDisableKinectGpuReservation: 0
   xboxOneEnable7thCore: 0
@@ -140,14 +161,21 @@ PlayerSettings:
       useSustainedPerformanceMode: 0
       enableVideoLayer: 0
       useProtectedVideoMemory: 0
+<<<<<<< HEAD
       minimumSupportedHeadTracking: 0
       maximumSupportedHeadTracking: 1
+=======
+>>>>>>> a80e97679bd5f080b8d16c826ddeaada4cd5b96e
     hololens:
       depthFormat: 1
   protectGraphicsMemory: 0
   useHDRDisplay: 0
   m_ColorGamuts: 00000000
+<<<<<<< HEAD
   targetPixelDensity: 30
+=======
+  targetPixelDensity: 0
+>>>>>>> a80e97679bd5f080b8d16c826ddeaada4cd5b96e
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
@@ -226,8 +254,11 @@ PlayerSettings:
   iOSLaunchScreeniPadFillPct: 100
   iOSLaunchScreeniPadSize: 100
   iOSLaunchScreeniPadCustomXibPath: 
+<<<<<<< HEAD
   iOSUseLaunchScreenStoryboard: 0
   iOSLaunchScreenCustomStoryboardPath: 
+=======
+>>>>>>> a80e97679bd5f080b8d16c826ddeaada4cd5b96e
   iOSDeviceRequirements: []
   iOSURLSchemes: []
   iOSBackgroundModes: 0
@@ -239,7 +270,10 @@ PlayerSettings:
   iOSManualSigningProvisioningProfileID: 
   tvOSManualSigningProvisioningProfileID: 
   appleEnableAutomaticSigning: 0
+<<<<<<< HEAD
   clonedFromGUID: 00000000000000000000000000000000
+=======
+>>>>>>> a80e97679bd5f080b8d16c826ddeaada4cd5b96e
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
@@ -272,7 +306,12 @@ PlayerSettings:
   m_BuildTargetVRSettings:
   - m_BuildTarget: Android
     m_Enabled: 0
+<<<<<<< HEAD
     m_Devices: []
+=======
+    m_Devices:
+    - Oculus
+>>>>>>> a80e97679bd5f080b8d16c826ddeaada4cd5b96e
   - m_BuildTarget: Metro
     m_Enabled: 0
     m_Devices: []
@@ -284,7 +323,12 @@ PlayerSettings:
     m_Devices: []
   - m_BuildTarget: PS4
     m_Enabled: 0
+<<<<<<< HEAD
     m_Devices: []
+=======
+    m_Devices:
+    - PlayStationVR
+>>>>>>> a80e97679bd5f080b8d16c826ddeaada4cd5b96e
   - m_BuildTarget: PSM
     m_Enabled: 0
     m_Devices: []
@@ -297,7 +341,10 @@ PlayerSettings:
   - m_BuildTarget: Standalone
     m_Enabled: 1
     m_Devices:
+<<<<<<< HEAD
     - None
+=======
+>>>>>>> a80e97679bd5f080b8d16c826ddeaada4cd5b96e
     - OpenVR
   - m_BuildTarget: Tizen
     m_Enabled: 0
@@ -323,12 +370,15 @@ PlayerSettings:
   - m_BuildTarget: tvOS
     m_Enabled: 0
     m_Devices: []
+<<<<<<< HEAD
   - m_BuildTarget: Facebook
     m_Enabled: 0
     m_Devices: []
   - m_BuildTarget: 
     m_Enabled: 0
     m_Devices: []
+=======
+>>>>>>> a80e97679bd5f080b8d16c826ddeaada4cd5b96e
   m_BuildTargetEnableVuforiaSettings: []
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
@@ -336,6 +386,7 @@ PlayerSettings:
   mobileMTRendering:
     iPhone: 1
     tvOS: 1
+<<<<<<< HEAD
   m_BuildTargetGroupLightmapEncodingQuality:
   - m_BuildTarget: Standalone
     m_EncodingQuality: 1
@@ -343,6 +394,8 @@ PlayerSettings:
     m_EncodingQuality: 1
   - m_BuildTarget: PS4
     m_EncodingQuality: 1
+=======
+>>>>>>> a80e97679bd5f080b8d16c826ddeaada4cd5b96e
   wiiUTitleID: 0005000011000000
   wiiUGroupID: 00010000
   wiiUCommonSaveSize: 4096
@@ -511,8 +564,11 @@ PlayerSettings:
   ps4PronunciationSIGPath: 
   ps4BackgroundImagePath: 
   ps4StartupImagePath: 
+<<<<<<< HEAD
   ps4StartupImagesFolder: 
   ps4IconImagesFolder: 
+=======
+>>>>>>> a80e97679bd5f080b8d16c826ddeaada4cd5b96e
   ps4SaveDataImagePath: 
   ps4SdkOverride: 
   ps4BGMPath: 
@@ -624,7 +680,11 @@ PlayerSettings:
   webGLUseWasm: 0
   webGLCompressionFormat: 1
   scriptingDefineSymbols:
+<<<<<<< HEAD
     1: VRTK_DEFINE_SDK_STEAMVR;VRTK_DEFINE_STEAMVR_PLUGIN_1_2_1_OR_NEWER;VRTK_DEFINE_STEAMVR_PLUGIN_1_2_2_OR_NEWER;VRTK_VERSION_3_2_1;VRTK_VERSION_3_2_1_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER
+=======
+    1: VRTK_VERSION_3_2_1;VRTK_VERSION_3_2_1_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER
+>>>>>>> a80e97679bd5f080b8d16c826ddeaada4cd5b96e
     4: VRTK_VERSION_3_2_1;VRTK_VERSION_3_2_1_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER
     7: VRTK_VERSION_3_2_1;VRTK_VERSION_3_2_1_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER
     13: VRTK_VERSION_3_2_1;VRTK_VERSION_3_2_1_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER
@@ -692,6 +752,15 @@ PlayerSettings:
   n3dsTitle: GameName
   n3dsProductCode: 
   n3dsApplicationId: 0xFF3FF
+<<<<<<< HEAD
+=======
+  stvDeviceAddress: 
+  stvProductDescription: 
+  stvProductAuthor: 
+  stvProductAuthorEmail: 
+  stvProductLink: 
+  stvProductCategory: 0
+>>>>>>> a80e97679bd5f080b8d16c826ddeaada4cd5b96e
   XboxOneProductId: 
   XboxOneUpdateKey: 
   XboxOneSandboxId: 
