@@ -82,6 +82,15 @@ public class WaveFormDraw : MonoBehaviour {
 		pos1 = (pos1 + 1) % buffsize;
 		pos2 = (pos2 + 1) % buffsize;
 
+	}
 
+	public void changeFreq(int index, int newvalue){
+		userfreqs [index] = newvalue;
+		ReDraw ();
+	}
+
+	public void changeAmp(int index, float newvalue){
+		useramps [index] = newvalue;
+		ReDraw ();
 	}
 }
