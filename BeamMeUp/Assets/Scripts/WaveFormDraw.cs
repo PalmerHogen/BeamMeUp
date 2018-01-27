@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WaveFormDraw : MonoBehaviour {
 
-	float PI = 3.14159265358979323846264338327950f;
+	float PI = 3.1415926535897932384626433832795f;
 
 	public LineRenderer linedraw;
 	public LineRenderer linedraw2;
@@ -15,6 +15,8 @@ public class WaveFormDraw : MonoBehaviour {
 
 	public int freqRange = 10;
 
+	public float requiredAccuracy = 0.01f;
+
 	float[] waveBuffer;
 	float[] userBuffer;
 	int[] userfreqs;
@@ -23,7 +25,6 @@ public class WaveFormDraw : MonoBehaviour {
 	int pos1 = 0;
 	int pos2 = 0;
 
-	public float timerthresh = 0.000001f;
 	float accum = 0.0f;
 
 	Transform light1pos, light2pos;
@@ -92,5 +93,14 @@ public class WaveFormDraw : MonoBehaviour {
 	public void changeAmp(int index, float newvalue){
 		useramps [index] = newvalue;
 		ReDraw ();
+	}
+
+	public bool checkSuccess(){
+		for (int i = 0; i < buffsize; i++) {
+			if (Mathf.Abs (waveBuffer [i] - userBuffer [i]) > requiredAccuracy) {
+				return false;
+			}
+		}
+		return true;
 	}
 }
