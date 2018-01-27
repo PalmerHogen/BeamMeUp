@@ -62,13 +62,14 @@ public class WaveFormDraw : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        //ReDraw();
 	}
 
 	//Call when user changes Values to recalculate!
 	void ReDraw(){
 		int j, k;
 		for (j = 0; j<buffsize; j++){
+            userBuffer[j] = 0;
 			for (k = 0; k < numWaves; k++) {
 				userBuffer [j] += useramps[k] * Mathf.Sin (((float)j/(float)buffsize)*(2.0f * PI * userfreqs [k]));
 			}
