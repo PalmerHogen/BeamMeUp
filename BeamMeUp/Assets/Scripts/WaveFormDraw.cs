@@ -104,4 +104,13 @@ public class WaveFormDraw : MonoBehaviour {
 		}
 		return true;
 	}
+
+    public float checkDiff() {
+        float total = 0.0f;
+        for (int i = 0; i < buffsize; i++)
+        {
+            total += (Mathf.Abs(waveBuffer[i] - userBuffer[i])) / 10; //10 is arbitrary here
+        }
+        return total / buffsize;
+    }
 }
