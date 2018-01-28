@@ -51,8 +51,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4482a57f7c76b8c49aea22ec82dd4c69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vfxTeleporters:
+  teleporterPos:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  vfxTeleport: {fileID: 1944413094435816, guid: ff13877711624f74caa7f1ff6fe2f8d4,
+    type: 2}
+  vfxTeleportShockWave: {fileID: 1165584867724790, guid: 58c62b264146ad84aacf11c6d846502a,
+    type: 2}
+  hensenPrefabs:
+  - {fileID: 1628942403650170, guid: 0107165428702ce40a8003c4e36028da, type: 2}
+  teleportDuration: 4
+  hensenPause: 1
