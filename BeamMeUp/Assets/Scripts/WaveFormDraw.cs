@@ -40,10 +40,10 @@ public class WaveFormDraw : MonoBehaviour {
 		int i, j, k;
 
 		for (i = 0; i < numWaves; i++) {
-			freqs [i] = Random.Range (0, freqRange);
-			amps[i] = Random.Range(0.0f, 1.0f);
-			userfreqs [i] = Random.Range (0, freqRange);
-			useramps[i] = Random.Range(0.0f, 1.0f);
+			freqs [i] = Random.Range (1, freqRange);
+			amps[i] = (float)Random.Range(-4, 4) / 8.0f;
+			userfreqs [i] = Random.Range (1, freqRange);
+			useramps[i] = (float)Random.Range(-4, 4) / 4.0f;
 		}
 
 		for (j = 0; j<buffsize; j++){

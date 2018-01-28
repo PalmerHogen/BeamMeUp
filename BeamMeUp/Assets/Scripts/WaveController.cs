@@ -12,6 +12,8 @@
         public int index;
         public bool freq;
         public bool amp;
+        public AudioClip[] sounds;
+        private AudioSource soundSource;
 
         // Use this for initialization
         void Start()
@@ -25,7 +27,12 @@
             if (userWave == null)
             {
                 Debug.Log("No user wave form found");
-                return;
+            }
+
+            soundSource = GetComponent<AudioSource>();
+            if (soundSource == null)
+            {
+                Debug.Log("No sound source found");
             }
 
             controlEvents.OnValueChanged.AddListener(HandleChange);
@@ -34,9 +41,17 @@
         private void HandleChange(object sender, Control3DEventArgs e)
         {
             if (freq)
+            {
                 userWave.changeFreq(index, (int)e.value);
+            }
             if (amp)
+            {
                 userWave.changeAmp(index, e.value);
+            }
+
+            int ran = Random.Range(0, sounds.Length);
+            soundSource.clip = sounds[ran];
+            soundSource.Play();
         }
     }
 }
