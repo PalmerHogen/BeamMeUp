@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/BeamMeUp.unity
+- path: Assets/TransporterRoom.unity
   isLoaded: 1
   isActive: 1
