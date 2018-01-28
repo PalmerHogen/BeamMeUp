@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/TransporterRoom.unity
+- path: Assets/Button_test_scene.unity
   isLoaded: 1
   isActive: 1

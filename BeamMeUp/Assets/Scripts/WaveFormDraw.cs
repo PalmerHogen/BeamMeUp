@@ -21,8 +21,9 @@ public class WaveFormDraw : MonoBehaviour {
 	float[] userBuffer;
 	int[] userfreqs;
 	float[] useramps;
+    float lightOffset;
 
-	int pos1 = 0;
+    int pos1 = 0;
 	int pos2 = 0;
 
 	float accum = 0.0f;
@@ -37,6 +38,9 @@ public class WaveFormDraw : MonoBehaviour {
 		float[] amps = new float[numWaves];
 		userfreqs = new int[numWaves]; 
 		useramps = new float[numWaves];
+        linedraw.positionCount = buffsize;
+        linedraw2.positionCount = buffsize;
+        lightOffset = draw1.transform.position.y;
 		int i, j, k;
 
 		for (i = 0; i < numWaves; i++) {
@@ -78,8 +82,8 @@ public class WaveFormDraw : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		light1pos.transform.position = new Vector3 (light1pos.transform.position.x, (float)waveBuffer [pos1], (float)pos1 / 8.0f);
-		light2pos.transform.position = new Vector3 (light2pos.transform.position.x, (float)userBuffer [pos2] - 10.0f, (float)pos2/8.0f);
+		light1pos.transform.position = new Vector3 (light1pos.transform.position.x, (float)waveBuffer [pos1] + lightOffset, (float)pos1 / 8.0f);
+		light2pos.transform.position = new Vector3 (light2pos.transform.position.x, (float)userBuffer [pos2] + lightOffset, (float)pos2/8.0f);
 
 		pos1 = (pos1 + 1) % buffsize;
 		pos2 = (pos2 + 1) % buffsize;
