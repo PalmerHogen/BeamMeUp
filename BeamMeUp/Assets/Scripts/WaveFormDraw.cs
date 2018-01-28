@@ -21,17 +21,21 @@ public class WaveFormDraw : MonoBehaviour {
 	float[] userBuffer;
 	int[] userfreqs;
 	float[] useramps;
-    float lightOffset;
+    Vector3 lightOffset;
 
     int pos1 = 0;
 	int pos2 = 0;
 
 	float accum = 0.0f;
 
+    public float yScale, zScale;
+    public float xRot, yRot, zRot;
+
 	Transform light1pos, light2pos;
 
 	// Use this for initialization
 	void Start () {
+
 		waveBuffer = new float[buffsize];
 		userBuffer = new float[buffsize];
 		int[] freqs = new int[numWaves];
@@ -40,7 +44,7 @@ public class WaveFormDraw : MonoBehaviour {
 		useramps = new float[numWaves];
         linedraw.positionCount = buffsize;
         linedraw2.positionCount = buffsize;
-        lightOffset = draw1.transform.position.y;
+        lightOffset = draw1.transform.position;
 		int i, j, k;
 
 		for (i = 0; i < numWaves; i++) {
@@ -50,13 +54,16 @@ public class WaveFormDraw : MonoBehaviour {
 			useramps[i] = (float)Random.Range(-4, 4) / 4.0f;
 		}
 
+        linedraw.transform.rotation = Quaternion.Euler(xRot, yRot, zRot);
+        linedraw2.transform.rotation = Quaternion.Euler(xRot, yRot, zRot);
+
 		for (j = 0; j<buffsize; j++){
 			for (k = 0; k < numWaves; k++) {
 				waveBuffer [j] += amps[k]* Mathf.Sin (((float)j/(float)buffsize)*(2.0f * PI * freqs [k]));
 				userBuffer [j] += useramps[k] * Mathf.Sin (((float)j/(float)buffsize)*(2.0f * PI * userfreqs [k]));
 			}
-			linedraw.SetPosition(j, new Vector3(0.0f, waveBuffer[j], (float)j/8.0f));
-			linedraw2.SetPosition (j, new Vector3 (0.0f, userBuffer [j], (float)j / 8.0f));
+			linedraw.SetPosition(j, new Vector3(0.0f, waveBuffer[j]*yScale,(float)j*zScale/8.0f));
+			linedraw2.SetPosition (j, new Vector3 (0.0f, userBuffer [j]*yScale, (float)j*zScale / 8.0f));
 		}
 		light1pos = draw1.transform;
 		light2pos = draw2.transform;
@@ -77,16 +84,16 @@ public class WaveFormDraw : MonoBehaviour {
 			for (k = 0; k < numWaves; k++) {
 				userBuffer [j] += useramps[k] * Mathf.Sin (((float)j/(float)buffsize)*(2.0f * PI * userfreqs [k]));
 			}
-			linedraw2.SetPosition (j, new Vector3 (0.0f, userBuffer [j], (float)j / 8.0f));
+			linedraw2.SetPosition (j, new Vector3 (0.0f, userBuffer [j]*yScale, (float)j*zScale / 8.0f));
 		}
 	}
 
 	void FixedUpdate(){
-		light1pos.transform.position = new Vector3 (light1pos.transform.position.x, (float)waveBuffer [pos1] + lightOffset, (float)pos1 / 8.0f);
-		light2pos.transform.position = new Vector3 (light2pos.transform.position.x, (float)userBuffer [pos2] + lightOffset, (float)pos2/8.0f);
+		//light1pos.transform.position = new Vector3 (light1pos.transform.position.x, (float)waveBuffer [pos1]*yScale, (float)pos1*zScale / 8.0f) + lightOffset;
+		//light2pos.transform.position = new Vector3 (light2pos.transform.position.x, (float)userBuffer [pos2]*yScale, (float)pos2*zScale/8.0f) + lightOffset;
 
-		pos1 = (pos1 + 1) % buffsize;
-		pos2 = (pos2 + 1) % buffsize;
+		//pos1 = (pos1 + 1) % buffsize;
+		//pos2 = (pos2 + 1) % buffsize;
 
 	}
 
