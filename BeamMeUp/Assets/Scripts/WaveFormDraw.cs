@@ -41,7 +41,7 @@ public class WaveFormDraw : MonoBehaviour {
 
 		for (i = 0; i < numWaves; i++) {
 			freqs [i] = Random.Range (0, freqRange);
-			amps[i] = Random.Range(0.0f, 1.0f);
+			amps[i] = (float)Random.Range(-4, 4) / 4.0f;
 			userfreqs [i] = Random.Range (0, freqRange);
 			useramps[i] = Random.Range(0.0f, 1.0f);
 		}
