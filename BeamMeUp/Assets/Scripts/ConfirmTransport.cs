@@ -37,8 +37,7 @@
 
         private void HandleChange(object sender, Control3DEventArgs e)
         {
-            Debug.Log(e.value.ToString());
-            userWave.checkSuccess();
+            float diff = userWave.checkDiff();
         }
     }
 }
