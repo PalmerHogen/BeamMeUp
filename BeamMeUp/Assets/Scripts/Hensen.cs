@@ -13,9 +13,19 @@ public class Hensen : MonoBehaviour
     public NavMeshAgent agent;
     Animator anim;
     bool isExiting;
+    Color[] shirtColors = new Color[3];
     // Use this for initialization
     void Start()
     {
+        shirtColors[0] = Color.blue;
+        shirtColors[1] = Color.red;
+        shirtColors[2] =  Color.yellow;
+
+        var shirtColor = shirtColors[Random.Range(0, 3)];
+
+        GetComponent<MeshRenderer>().material.color = shirtColor;
+
+
         anim = GetComponent<Animator>();
         speedHashParam = Animator.StringToHash("Speed");
         agent = GetComponent<NavMeshAgent>();
