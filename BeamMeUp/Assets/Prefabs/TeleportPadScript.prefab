@@ -20,8 +20,69 @@ GameObject:
   m_Component:
   - component: {fileID: 4336617727546778}
   - component: {fileID: 114230160362123214}
+  - component: {fileID: 82925335253335670}
   m_Layer: 0
   m_Name: TeleportPadScript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1156274804001630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4921591776489452}
+  m_Layer: 0
+  m_Name: TeleportPos_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1286252899574858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4648917966810812}
+  m_Layer: 0
+  m_Name: TeleportPos_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1871428663282296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4827280329089100}
+  m_Layer: 0
+  m_Name: TeleportPos_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1968164700829566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4927547105794992}
+  m_Layer: 0
+  m_Name: TeleportPos_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,10 +97,146 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4927547105794992}
+  - {fileID: 4827280329089100}
+  - {fileID: 4921591776489452}
+  - {fileID: 4648917966810812}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4648917966810812
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1286252899574858}
+  m_LocalRotation: {x: -0, y: 0.8520435, z: -0, w: 0.5234711}
+  m_LocalPosition: {x: -2.123, y: 0, z: -1.007}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4336617727546778}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 116.869, z: 0}
+--- !u!4 &4827280329089100
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1871428663282296}
+  m_LocalRotation: {x: -0, y: 0.8832427, z: -0, w: 0.4689162}
+  m_LocalPosition: {x: -0.158, y: 0, z: 0.768}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4336617727546778}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 124.07201, z: 0}
+--- !u!4 &4921591776489452
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1156274804001630}
+  m_LocalRotation: {x: -0, y: 0.87103003, z: -0, w: 0.49122986}
+  m_LocalPosition: {x: -2.123, y: 0, z: 0.768}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4336617727546778}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 121.157005, z: 0}
+--- !u!4 &4927547105794992
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1968164700829566}
+  m_LocalRotation: {x: -0, y: 0.88496107, z: -0, w: 0.4656651}
+  m_LocalPosition: {x: -0.158, y: 0, z: -0.914}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4336617727546778}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 124.493004, z: 0}
+--- !u!82 &82925335253335670
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1004066422618726}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 285b7f82f23f5714194734717861ef38, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114230160362123214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,15 +249,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleporterPos:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4927547105794992}
+  - {fileID: 4827280329089100}
+  - {fileID: 4921591776489452}
+  - {fileID: 4648917966810812}
   vfxTeleport: {fileID: 1944413094435816, guid: ff13877711624f74caa7f1ff6fe2f8d4,
     type: 2}
   vfxTeleportShockWave: {fileID: 1165584867724790, guid: 58c62b264146ad84aacf11c6d846502a,
     type: 2}
   hensenPrefabs:
   - {fileID: 1628942403650170, guid: 0107165428702ce40a8003c4e36028da, type: 2}
+  - {fileID: 1071000311426612, guid: 0facf3bd9226b754cbb3b0ddaeacb25f, type: 2}
+  - {fileID: 1076699200222344, guid: 5a58fc5ebd10071478c32ce36cb36ca1, type: 2}
+  - {fileID: 1132515433404238, guid: 7ed8994304a804f4da05fd001c348fb9, type: 2}
+  audio: {fileID: 82925335253335670}
   teleportDuration: 4
   hensenPause: 1

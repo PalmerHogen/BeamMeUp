@@ -6,6 +6,7 @@
 
     public class ConfirmTransport : MonoBehaviour
     {
+        public TeleportPad teleportPad;
 
         private VRTK_Control_UnityEvents controlEvents;
         public WaveFormDraw userWave;
@@ -37,7 +38,10 @@
 
         private void HandleChange(object sender, Control3DEventArgs e)
         {
+
+            soundSource.Play();
             float diff = userWave.checkDiff();
+            teleportPad.Teleport(diff);
         }
     }
 }

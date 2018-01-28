@@ -7,15 +7,11 @@ public class TeleportPad : MonoBehaviour {
     public GameObject vfxTeleport;
     public GameObject vfxTeleportShockWave;
     public GameObject[] hensenPrefabs; // listed worst to best
+    public AudioSource audio;
+ 
 
     public float teleportDuration;
     public float hensenPause = 1f;
-
-    void Start()
-    {
-        BadTeleport();
-    }
-
 
     //public void StartTeleportVFX(int teleporter)
     //{
@@ -27,35 +23,53 @@ public class TeleportPad : MonoBehaviour {
     //    vfxTeleporters[teleporter].Stop();
     //}
 
+
+        void Start()
+    {
+        //ReallyBad();
+        audio.GetComponent<AudioSource>();
+
+    }
     public void Teleport(float value)
     {
-        if (value <= 20)
+        //bad, perfect, really bad, really really bad
+
+        if (value <= 0.008)
         {
-            BadTeleport();
+            Perfect();
         }
-        else if(value <= 40)
+        else if (value <= 0.01)
         {
-            KindaBadTeleport();
+            Okay();
         }
-        else if (value <= 60)
+        else if (value <= 0.05)
         {
-            DecentTeleport();
+            Bad();
         }
-        else if (value <= 80)
+        else
         {
-            OkayTeleport();
+            ReallyBad();
         }
-        else if (value <= 90)
-        {
-            GoodTeleport();
-        }else
-        {
-            GreatTeleport();
-        }
+
+      
+
        
     }
 
-    void BadTeleport()
+    void Perfect()
+    {
+        var trans = teleporterPos[Random.Range(0, 3)];
+        var partSys = Instantiate(vfxTeleport).GetComponent<ParticleSystem>();
+        
+        partSys.transform.position = trans.position;
+        var main = partSys.main;
+
+        StartCoroutine(TeleportInHensen(partSys, hensenPrefabs[0], teleportDuration, trans));
+        partSys.Play();
+       
+    }
+
+    void Okay()
     {
         //play bad music
         var trans = teleporterPos[Random.Range(0, 3)];
@@ -63,48 +77,42 @@ public class TeleportPad : MonoBehaviour {
         partSys.transform.position = trans.position;
         var main = partSys.main;
 
-        StartCoroutine(Teleport(partSys, hensenPrefabs[0], teleportDuration, trans));
+        StartCoroutine(TeleportInHensen(partSys, hensenPrefabs[1], teleportDuration, trans));
         partSys.Play();
         
     }
 
-    void KindaBadTeleport()
+    void Bad()
     {
+        var trans = teleporterPos[Random.Range(0, 3)];
+        var partSys = Instantiate(vfxTeleport).GetComponent<ParticleSystem>();
+        partSys.transform.position = trans.position;
+        var main = partSys.main;
 
+        StartCoroutine(TeleportInHensen(partSys, hensenPrefabs[2], teleportDuration, trans));
+        partSys.Play();
     }
 
-    void DecentJob()
+   void ReallyBad()
     {
+      
+        var trans = teleporterPos[Random.Range(0, 3)];
+        var partSys = Instantiate(vfxTeleport).GetComponent<ParticleSystem>();
+        partSys.transform.position = trans.position;
+        var main = partSys.main;
 
+        StartCoroutine(TeleportInReallyBadHensen(partSys, hensenPrefabs[3], teleportDuration, trans));
+        partSys.Play();
     }
 
-    void DecentTeleport()
-    {
-
-    }
-
-    void OkayTeleport()
-    {
-
-    }
-
-    void GoodTeleport()
-    {
-
-    }
-
-    void GreatTeleport()
-    {
-
-    }
-
-    IEnumerator Teleport(ParticleSystem teleportPartSys, GameObject hensenPrefab, float timeToInvoke, Transform teleporterTrans)
+    IEnumerator TeleportInHensen(ParticleSystem teleportPartSys, GameObject hensenPrefab, float timeToInvoke, Transform teleporterTrans)
     {
         yield return new WaitForSeconds(timeToInvoke);
-
+        audio.Play();
         var hensenGO = Instantiate(hensenPrefab);
         hensenGO.transform.position = teleporterTrans.position;
         hensenGO.transform.rotation = teleporterTrans.rotation;
+        Debug.Log(hensenGO);
 
         var teleportShock = Instantiate(vfxTeleportShockWave);
         teleportShock.transform.position = teleportPartSys.transform.position;
@@ -117,6 +125,27 @@ public class TeleportPad : MonoBehaviour {
         var hensen = hensenGO.GetComponent<Hensen>();
         hensen.GoToExit();
 
+
+
+    }
+
+    IEnumerator TeleportInReallyBadHensen(ParticleSystem teleportPartSys, GameObject hensenPrefab, float timeToInvoke, Transform teleporterTrans)
+    {
+        yield return new WaitForSeconds(timeToInvoke);
+        audio.Play();
+        var hensenGO = Instantiate(hensenPrefab);
+        hensenGO.transform.position = teleporterTrans.position;
+        hensenGO.transform.rotation = teleporterTrans.rotation;
+
+        var teleportShock = Instantiate(vfxTeleportShockWave);
+        teleportShock.transform.position = teleportPartSys.transform.position;
+
+        Destroy(teleportShock, teleportShock.GetComponent<ParticleSystem>().main.duration);
+        Destroy(teleportPartSys.gameObject);
+
+
+       
+   
 
 
     }

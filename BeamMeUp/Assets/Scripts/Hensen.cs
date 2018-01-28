@@ -8,7 +8,7 @@ public class Hensen : MonoBehaviour
 {
     public Material[] shirts = new Material[3];
     public float speedDamp = .1f;
-    Transform exit;
+    public Transform exit;
     int speedHashParam;
     [HideInInspector]
     public NavMeshAgent agent;
@@ -28,8 +28,7 @@ public class Hensen : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.isStopped = true;
         exit = GameObject.Find("Exit").transform;
-
-        GoToExit();
+        
     }
 
     // Update is called once per frame
