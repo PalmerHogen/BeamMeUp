@@ -2,15 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour {
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(BoxCollider))]
+public class Door : MonoBehaviour
+{
+    Animator anim;
+   
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+      
+    }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+
+     public void OpenDoor()
+    {
+        anim.SetTrigger("OpenDoor");
+    }
+
+    public void CloseDoor()
+    {
+        anim.SetTrigger("CloseDoor");
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.GetComponent<Hensen>() != null)
+        OpenDoor();
+    }
+
+    void OnTriggerExit()
+    {
+        CloseDoor();
+    }
+   
 }

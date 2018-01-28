@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TeleportEffect : MonoBehaviour {
-    ParticleSystem vfx_Teleport;
     float effectDuration = 5;
     float lerpStart;
     bool isTeleportingIn = false;
@@ -23,14 +22,13 @@ public class TeleportEffect : MonoBehaviour {
     {
         if (Input.GetKey(KeyCode.I))
         {
-            StartTeleportVFX();
             TeleportIn();
         }
 
         if (Input.GetKey(KeyCode.O))
         {
             TeleportOut();
-            StopTeleportVFX();
+       
         }
         if (isTeleportingIn)
         {
@@ -74,14 +72,5 @@ public class TeleportEffect : MonoBehaviour {
         isTeleportingOut = true;
        // lerpStart = Time.time;
     }
-
-    public void StartTeleportVFX()
-    {
-        vfx_Teleport.Play();
-    }
-
-    public void StopTeleportVFX()
-    {
-        vfx_Teleport.Stop();
-    }
+   
 }
