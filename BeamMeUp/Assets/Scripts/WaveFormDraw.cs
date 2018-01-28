@@ -78,8 +78,8 @@ public class WaveFormDraw : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		light1pos.transform.position = new Vector3 (0.0f, (float)waveBuffer [pos1], (float)pos1 / 8.0f);
-		light2pos.transform.position = new Vector3 (0.0f, (float)userBuffer [pos2] - 10.0f, (float)pos2/8.0f);
+		light1pos.transform.position = new Vector3 (light1pos.transform.position.x, (float)waveBuffer [pos1], (float)pos1 / 8.0f);
+		light2pos.transform.position = new Vector3 (light2pos.transform.position.x, (float)userBuffer [pos2] - 10.0f, (float)pos2/8.0f);
 
 		pos1 = (pos1 + 1) % buffsize;
 		pos2 = (pos2 + 1) % buffsize;
