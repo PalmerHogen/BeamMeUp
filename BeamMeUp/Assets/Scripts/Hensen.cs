@@ -6,6 +6,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Hensen : MonoBehaviour
 {
+    public Material[] shirts = new Material[3];
     public float speedDamp = .1f;
     Transform exit;
     int speedHashParam;
@@ -13,17 +14,13 @@ public class Hensen : MonoBehaviour
     public NavMeshAgent agent;
     Animator anim;
     bool isExiting;
-    Color[] shirtColors = new Color[3];
+ 
     // Use this for initialization
     void Start()
     {
-        shirtColors[0] = Color.blue;
-        shirtColors[1] = Color.red;
-        shirtColors[2] =  Color.yellow;
 
-        var shirtColor = shirtColors[Random.Range(0, 3)];
-
-        GetComponent<MeshRenderer>().material.color = shirtColor;
+        var body = transform.GetChild(0).transform.Find("Body");
+        body.GetComponent<SkinnedMeshRenderer>().material = shirts[Random.Range(0, 2)];
 
 
         anim = GetComponent<Animator>();
